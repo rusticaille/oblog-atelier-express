@@ -1,0 +1,32 @@
+<%- include('partials/header'); %>
+
+        <div class="main-layout pure-u-1 pure-u-md-3-4">
+            <main class="main-content pure-g">
+
+
+                <article class="post post--full pure-u-1">
+                    <div class="post-content post--category-histoire">
+                        <header class="post-header">
+                            <a class="post-back" href="./index.html">&lt; Retour à l'accueil</a>
+                            <h2 class="post-title"><%=article.title%></h2>
+                            <p class="post-meta">
+                                Par <a class="post-author" href="#"><%=article.author%></a> dans la catégorie <a
+                                    class="post-category" href="/category/<%=article.category.toLowerCase()%>"><%=article.category%></a>
+                            </p>
+                        </header>
+                        <figure>
+                            <img src="<%=article.img%>" alt="<%=article.img_alt%>">
+                            <figcaption class="post-image-caption"><%=article.sub_title%></figcaption>
+                        </figure>
+                        <main class="post-description">
+                            <div class="post-text">
+                                <p><%=article.text.split(' ').splice(0, 60).join(' ')%></p>
+                                <p><%=article.text.split(' ').splice(61, 120).join(' ')%></p>
+                                <p><%=article.text.split(' ').splice(121, 220).join(' ')%></p>
+                            </div>
+                        </main>
+                    </div>
+                </article>
+            </main>
+
+<%- include('partials/footer'); %>
